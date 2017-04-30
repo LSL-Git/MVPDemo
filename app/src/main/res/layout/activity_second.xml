@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_show"
+        android:textSize="25sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hello MVP"/>
+
+    <Button
+        android:id="@+id/but_v1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="button V1 加载时间3秒" />
+
+    <Button
+        android:id="@+id/but_v2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="button V2 加载时间5秒" />
+
+</LinearLayout>
