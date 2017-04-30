@@ -1,5 +1,6 @@
 package app.com.lsl.mvpdemo.presenter;
 
+import app.com.lsl.mvpdemo.base.BasePresenter;
 import app.com.lsl.mvpdemo.model.DataModelV1;
 import app.com.lsl.mvpdemo.model.Model;
 import app.com.lsl.mvpdemo.view.View;
@@ -8,7 +9,7 @@ import app.com.lsl.mvpdemo.view.View;
  * Created by M1308_000 on 2017/4/30.
  */
 
-public class DataPresenterV1 {
+public class DataPresenterV1 extends BasePresenter<View> {
 
     // view
     View mView;

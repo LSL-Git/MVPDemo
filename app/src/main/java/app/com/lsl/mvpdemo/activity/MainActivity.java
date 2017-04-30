@@ -1,17 +1,18 @@
-package app.com.lsl.mvpdemo;
+package app.com.lsl.mvpdemo.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import app.com.lsl.mvpdemo.R;
+import app.com.lsl.mvpdemo.base.MVPBaseActivity;
 import app.com.lsl.mvpdemo.presenter.DataPresenterV1;
 import app.com.lsl.mvpdemo.presenter.DataPresenterV2;
 import app.com.lsl.mvpdemo.view.View;
 
-public class MainActivity extends AppCompatActivity implements View, android.view.View.OnClickListener{
+public class MainActivity extends MVPBaseActivity<View, DataPresenterV1> implements View, android.view.View.OnClickListener{
 
     private TextView tvShow;
     private Button button2;
@@ -29,6 +30,12 @@ public class MainActivity extends AppCompatActivity implements View, android.vie
 
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
+
+    }
+
+    @Override
+    protected DataPresenterV1 createPresenter() {
+        return new DataPresenterV1(this);
     }
 
     @Override
@@ -49,8 +56,8 @@ public class MainActivity extends AppCompatActivity implements View, android.vie
             case R.id.but_v1:
                 tvShow.setText("");
                 // 中间者
-                new DataPresenterV1(this).fetch();
-
+                //new DataPresenterV1(this).fetch();
+                mPresenter.fetch();
                 break;
             case R.id.but_v2:
                 tvShow.setText("");
